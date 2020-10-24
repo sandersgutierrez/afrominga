@@ -1,4 +1,4 @@
-package afrominga.servlets;
+package afrominga.controller;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
