@@ -1,4 +1,7 @@
+### Intellij IDEA ###
 .idea/
-target/
-.run/
 *.iml
+*.ips
+
+target/
+out/
