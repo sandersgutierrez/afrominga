@@ -3,5 +3,11 @@
 *.iml
 *.ips
 
+### VSCode ###
+.vscode/
+
+### Gradle/Maven ###
 target/
 out/
+build/
+.gradle/

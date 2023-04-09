@@ -1,7 +1,8 @@
-package afrominga.filters;
+package io.github.sandersgutierrez.afrominga.filters;
 
-import javax.servlet.*;
-import javax.servlet.annotation.WebFilter;
+import jakarta.servlet.*;
+import jakarta.servlet.annotation.WebFilter;
+
 import java.io.IOException;
 
 @WebFilter
@@ -19,6 +20,6 @@ public class LoginFilter implements Filter {
 
     @Override
     public void destroy() {
-        System.out.println("Goodbie from LoginFilter");
+        System.out.println("Goodbye from LoginFilter");
     }
 }
