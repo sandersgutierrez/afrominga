@@ -18,11 +18,11 @@ public class HomeServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        String firstname = req.getParameter("firstname");
-        String lastname = req.getParameter("lastname");
+        String firstName = req.getParameter("firstname");
+        String lastName = req.getParameter("lastname");
 
-        req.setAttribute("firstname", firstname);
-        req.setAttribute("lastname", lastname);
+        req.setAttribute("firstname", firstName);
+        req.setAttribute("lastname", lastName);
 
         RequestDispatcher rd = req.getRequestDispatcher("/views/home.jsp");
         rd.forward(req, res);

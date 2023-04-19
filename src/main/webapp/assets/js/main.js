@@ -1,3 +1,5 @@
 'use strict'
 
-console.log('Hola Mundo')
+window.addEventListener('DOMContentLoaded', () => {
+    console.log('Hola Mundo')
+})
