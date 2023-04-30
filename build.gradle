@@ -1,4 +1,6 @@
 plugins {
+    id 'application'
+    id 'java'
     id 'war'
 }
 
@@ -6,6 +8,17 @@ group = 'io.github.sandersgutierrez.afrominga'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 17
 targetCompatibility = 17
+
+sourceSets {
+    main {
+        java { srcDirs = ['src/main'] }
+        resources { srcDirs = ['src/main/resources'] }
+    }
+    test {
+        java { srcDirs = ['src/test'] }
+        resources { srcDirs = ['src/test/resources'] }
+    }
+}
 
 repositories {
     mavenCentral()
@@ -15,4 +28,9 @@ dependencies {
     implementation 'jakarta.servlet:jakarta.servlet-api:6.0.0'
     implementation 'jakarta.servlet.jsp:jakarta.servlet.jsp-api:3.1.1'
     implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:3.0.0'
+    implementation 'org.eclipse.jetty:jetty-server:11.0.15'
+}
+
+application {
+    mainClass = 'io.github.sandersgutierrez.afrominga.AfromingaApplication'
 }

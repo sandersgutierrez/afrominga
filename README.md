@@ -29,5 +29,5 @@ git clone https://github.com/sandersgutierrez/afrominga.git
 - Run application
 
 ```shell
-./gradlew bootRun
+./gradlew :war
 ```
