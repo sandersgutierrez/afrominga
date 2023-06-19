@@ -1,5 +1,4 @@
 plugins {
-    id 'application'
     id 'java'
     id 'war'
 }
@@ -20,17 +19,11 @@ sourceSets {
     }
 }
 
-repositories {
-    mavenCentral()
-}
 
 dependencies {
     implementation 'jakarta.servlet:jakarta.servlet-api:6.0.0'
     implementation 'jakarta.servlet.jsp:jakarta.servlet.jsp-api:3.1.1'
     implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:3.0.0'
     implementation 'org.eclipse.jetty:jetty-server:11.0.15'
-}
-
-application {
-    mainClass = 'io.github.sandersgutierrez.afrominga.AfromingaApplication'
+    implementation 'org.eclipse.jetty:jetty-webapp:11.0.15'
 }

@@ -1,6 +1,7 @@
 package io.github.sandersgutierrez.afrominga.controller;
 
 import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -18,7 +19,7 @@ public class IndexServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        RequestDispatcher rd = req.getRequestDispatcher("/views/index.jsp");
+        RequestDispatcher rd = req.getRequestDispatcher("views/index.jsp");
         rd.forward(req, res);
     }
 }
