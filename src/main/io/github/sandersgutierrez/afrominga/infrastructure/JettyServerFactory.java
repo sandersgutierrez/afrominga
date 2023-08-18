@@ -6,10 +6,10 @@ import org.eclipse.jetty.server.ServerConnector;
 import org.eclipse.jetty.servlet.ServletHandler;
 import org.eclipse.jetty.util.thread.QueuedThreadPool;
 
-public class JettyServer {
+public class JettyServerFactory {
     private static Server server;
 
-    public static void start() throws Exception {
+    public static void start(String[] args) throws Exception {
         QueuedThreadPool threadPool = new QueuedThreadPool();
         threadPool.setName("server");
         server = new Server(threadPool);
