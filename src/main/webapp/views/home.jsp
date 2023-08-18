@@ -2,8 +2,11 @@
 
 <div class="container">
     <div>
-        <h5>Mis Datos Personales</h5>
-        <p>${firstname} ${lastname}</p>
+        <h2>Clientes</h2>
+        <p>Nombre de la Empresa: ${nombreEmpresa} - Nombre del Contacto: ${nombreContacto}</p>
+        <c:forEach var="varName" begin="1" end="10" step="1">
+            My ForEach ${varName}
+        </c:forEach>
     </div>
 </div>
 

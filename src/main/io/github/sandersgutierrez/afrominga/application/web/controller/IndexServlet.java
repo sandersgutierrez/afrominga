@@ -1,7 +1,6 @@
-package io.github.sandersgutierrez.afrominga.controller;
+package io.github.sandersgutierrez.afrominga.application.web.controller;
 
 import jakarta.servlet.RequestDispatcher;
-import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -11,7 +10,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.Serial;
 
-@WebServlet(name = "index", urlPatterns = "/")
+@WebServlet(name = "io.github.sandersgutierrez.afrominga.index", urlPatterns = "/")
 public class IndexServlet extends HttpServlet {
 
     @Serial
