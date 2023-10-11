@@ -23,9 +23,11 @@ public class AfroController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
         List<Afro> afroList = new ArrayList<>();
-        try (Connection connection = Database.connect()) {
+        try (
+            var connection = Database.connect();
             var stmt = connection.createStatement();
             var rs = stmt.executeQuery("SELECT * FROM afro");
+        ) {
             while (rs.next()) {
                 String id = String.valueOf(rs.getInt("id"));
                 String fullName = rs.getString("nombres_apellidos");

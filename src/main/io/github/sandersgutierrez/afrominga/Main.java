@@ -10,6 +10,6 @@ public class Main {
     public static void main(String[] args) throws Exception {
         JettyServerFactory.start(args);
         logger.info("Profile active: {}", System.getenv("PROFILE"));
-        logger.info("Started application...");
+        logger.info("Started application...!!!");
     }
 }

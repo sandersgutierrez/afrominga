@@ -1,10 +1,14 @@
 package io.github.sandersgutierrez.afrominga.infrastructure;
 
+import io.github.sandersgutierrez.afrominga.application.web.controller.AboutServlet;
 import io.github.sandersgutierrez.afrominga.application.web.controller.AfroController;
+import org.eclipse.jetty.server.Handler;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
+import org.eclipse.jetty.server.handler.HandlerCollection;
 import org.eclipse.jetty.servlet.ServletHandler;
 import org.eclipse.jetty.util.thread.QueuedThreadPool;
+import org.eclipse.jetty.webapp.WebAppContext;
 
 public class JettyServerFactory {
     private static Server server;

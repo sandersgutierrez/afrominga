@@ -3,7 +3,7 @@
 ## :thought_balloon: What is it?
 
 **Afrominga** is a web application that allows you to manage the information of the
-**La Minga 8Afro-descendant Organization** on the general characterization of their community
+**La Minga Afro-descendant Organization** on the general characterization of their community
 in order to promote public policies that contribute to improving the quality of life.
 
 ## :checkered_flag: How to start?
