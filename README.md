@@ -11,7 +11,7 @@ in order to promote public policies that contribute to improving the quality of 
 - Install Java 17, go to [SDKMAN](https://sdkman.io/install) for install SDKMAN.
 
 ```shell
-sdk install java x.y.z-open
+sdk install java x.y.z-vendor
 ```
 
 - Set up JVM default

@@ -1,4 +1,4 @@
-package io.github.sandersgutierrez.afrominga.shared.domain;
+package io.github.untalsanders.afrominga.shared.domain;
 
 public interface DAO<T> {
     void save(T entity);

@@ -1,4 +1,4 @@
-package io.github.sandersgutierrez.afrominga.application.web.controller;
+package io.github.untalsanders.afrominga.application.web;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -12,7 +12,6 @@ import java.io.Serial;
 
 @WebServlet(name = "io.github.sandersgutierrez.afrominga.about", urlPatterns = "/about")
 public class AboutServlet extends HttpServlet {
-
     @Serial
     private static final long serialVersionUID = 1L;
 

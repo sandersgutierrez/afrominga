@@ -1,4 +1,3 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -11,13 +10,16 @@
 <body class="app">
 <header class="header">
     <div class="container">
-        <a class="navbar-brand" href="${pageContext.request.contextPath}">Afrominga</a>
+        <a class="navbar-brand" href="${pageContext.request.contextPath}/">Afrominga</a>
         <button class="icon-mobile" type="button">
             <i class="fa fa-bars"></i>
         </button>
         <nav class="navbar">
             <a class="nav-link active" href="${pageContext.request.contextPath}/about">
                 About Me
+            </a>
+            <a class="nav-link active" href="${pageContext.request.contextPath}/login">
+                LogIn
             </a>
         </nav>
     </div>

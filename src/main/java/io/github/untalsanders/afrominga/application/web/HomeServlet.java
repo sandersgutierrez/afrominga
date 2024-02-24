@@ -1,4 +1,4 @@
-package io.github.sandersgutierrez.afrominga.application.web.controller;
+package io.github.untalsanders.afrominga.application.web;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -10,15 +10,14 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.Serial;
 
-@WebServlet(name = "io.github.sandersgutierrez.afrominga.index", urlPatterns = "/")
-public class IndexServlet extends HttpServlet {
-
+@WebServlet(name = "home", urlPatterns = "/home")
+public class HomeServlet extends HttpServlet {
     @Serial
     private static final long serialVersionUID = 1L;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        RequestDispatcher rd = req.getRequestDispatcher("views/index.jsp");
+        RequestDispatcher rd = getServletContext().getRequestDispatcher("/views/home.jsp");
         rd.forward(req, res);
     }
 }

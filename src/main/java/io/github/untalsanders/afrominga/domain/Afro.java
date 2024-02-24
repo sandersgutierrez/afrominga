@@ -1,12 +1,11 @@
-package io.github.sandersgutierrez.afrominga.domain;
+package io.github.untalsanders.afrominga.domain;
 
 public class Afro {
     private String id;
     private String firstname;
     private String lastname;
 
-    public Afro() {
-    }
+    public Afro() {}
 
     public Afro(String id, String firstname) {
         this.id = id;
@@ -39,10 +38,6 @@ public class Afro {
 
     @Override
     public String toString() {
-        return "Afro{" +
-                   "id='" + id + '\'' +
-                   ", firstname='" + firstname + '\'' +
-                   ", lastname='" + lastname + '\'' +
-                   '}';
+        return String.format("Afro[id='%s', firstname='%s', lastname='%s']", getId(), getFirstname(), getLastname());
     }
 }

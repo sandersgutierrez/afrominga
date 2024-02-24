@@ -1,4 +1,4 @@
-package io.github.sandersgutierrez.afrominga.infrastructure;
+package io.github.untalsanders.afrominga.infrastructure.config;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -8,19 +8,18 @@ import java.util.regex.Pattern;
 
 public final class Configuration {
     public static String get(String envVarName) throws IOException {
-        var propertyLoaded = load(System.getenv("PROFILE"));
+        var propertyLoaded = load(System.getenv("profile"));
         return resolveEnvVars(propertyLoaded.getProperty(envVarName));
     }
 
     private static Properties load(String profile) throws IOException {
         Objects.requireNonNull(profile);
 
-        var propertyFileToLoad = switch (profile) {
-            case "dev", "int", "qa", "prod" -> String.format("src/main/resources/application-%s.properties", profile);
-            default -> "src/main/resources/application.properties";
-        };
+        String filePropertyToLoad = !profile.isEmpty()
+            ? String.format("src/main/resources/application-%s.properties", profile)
+            : "src/main/resources/application.properties";
 
-        try (FileInputStream in = new FileInputStream(propertyFileToLoad)) {
+        try (FileInputStream in = new FileInputStream(filePropertyToLoad)) {
             Properties properties = new Properties();
             properties.load(in);
             return properties;
