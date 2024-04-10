@@ -1,8 +1,8 @@
 package io.github.untalsanders.afrominga.shared.domain;
 
 public interface DAO<T> {
-    void save(T entity);
-    void update(T entity);
-    T search(String id);
+    void create(T entity);
+    T read(String id);
+    void update(String id);
     void delete(T entity);
 }

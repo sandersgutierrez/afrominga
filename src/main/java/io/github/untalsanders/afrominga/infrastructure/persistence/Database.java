@@ -9,7 +9,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 public class Database {
-    public static Connection connect() throws SQLException {
+    public static Connection getConnection() throws SQLException {
         return DataSource.getConnection();
     }
 
@@ -17,6 +17,8 @@ public class Database {
         private static final HikariConfig config = new HikariConfig();
         private static final HikariDataSource ds;
         private static final String TEMPLATE_URL = "jdbc:%s://%s:%s/%s";
+
+        private DataSource() {}
 
         static {
             try {
@@ -41,8 +43,6 @@ public class Database {
                 throw new RuntimeException(e);
             }
         }
-
-        private DataSource() {}
 
         public static Connection getConnection() throws SQLException {
             return ds.getConnection();

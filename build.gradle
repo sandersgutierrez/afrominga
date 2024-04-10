@@ -7,14 +7,20 @@ repositories {
     mavenCentral()
 }
 
+ext {
+    jettyVersion = "11.0.20"
+}
+
 dependencies {
     providedCompile 'jakarta.el:jakarta.el-api:5.0.1'
     providedCompile 'jakarta.servlet:jakarta.servlet-api:6.0.0'
     providedCompile 'jakarta.servlet.jsp:jakarta.servlet.jsp-api:3.1.1'
     providedCompile 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:3.0.0'
 
-    implementation 'org.eclipse.jetty:jetty-server:11.0.15'
-    implementation 'org.eclipse.jetty:jetty-webapp:11.0.15'
+    implementation "org.eclipse.jetty:apache-jsp:${jettyVersion}"
+    implementation "org.eclipse.jetty:jetty-annotations:${jettyVersion}"
+    implementation "org.eclipse.jetty:jetty-server:${jettyVersion}"
+    implementation "org.eclipse.jetty:jetty-webapp:${jettyVersion}"
 
     implementation 'ch.qos.logback:logback-core:1.4.14'
     implementation 'ch.qos.logback:logback-classic:1.4.14'

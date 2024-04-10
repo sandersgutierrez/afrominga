@@ -23,11 +23,11 @@ export JAVA_HOME='$HOME/.sdkman/candidates/java/current'
 - Clone this repository
 
 ```shell
-git clone https://github.com/sandersgutierrez/afrominga.git
+git clone https://github.com/untalsanders/afrominga.git
 ```
 
 - Run application
 
 ```shell
-./gradlew :war
+profile=dev ./gradlew :clean :run
 ```

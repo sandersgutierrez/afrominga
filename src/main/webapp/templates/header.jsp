@@ -7,21 +7,22 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/styles.css" />
     <title>Afrominga</title>
 </head>
+
 <body class="app">
-<header class="header">
-    <div class="container">
-        <a class="navbar-brand" href="${pageContext.request.contextPath}/">Afrominga</a>
-        <button class="icon-mobile" type="button">
-            <i class="fa fa-bars"></i>
-        </button>
-        <nav class="navbar">
-            <a class="nav-link active" href="${pageContext.request.contextPath}/about">
-                About Me
-            </a>
-            <a class="nav-link active" href="${pageContext.request.contextPath}/login">
-                LogIn
-            </a>
-        </nav>
-    </div>
-</header>
+    <header class="header">
+        <div class="container">
+            <a class="navbar-brand" href="${pageContext.request.contextPath}/">Afrominga</a>
+            <button class="icon-mobile" type="button">
+                <i class="fa fa-bars"></i>
+            </button>
+            <nav class="navbar">
+                <a class="nav-link active" href="${pageContext.request.contextPath}/about">
+                    About Me
+                </a>
+                <a class="nav-link active" href="${pageContext.request.contextPath}/login">
+                    LogIn
+                </a>
+            </nav>
+        </div>
+    </header>
 <main>
