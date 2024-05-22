@@ -9,6 +9,7 @@ repositories {
 
 ext {
     jettyVersion = "11.0.20"
+    logbackVersion = "1.4.14"
 }
 
 dependencies {
@@ -22,8 +23,8 @@ dependencies {
     implementation "org.eclipse.jetty:jetty-server:${jettyVersion}"
     implementation "org.eclipse.jetty:jetty-webapp:${jettyVersion}"
 
-    implementation 'ch.qos.logback:logback-core:1.4.14'
-    implementation 'ch.qos.logback:logback-classic:1.4.14'
+    implementation "ch.qos.logback:logback-core:${logbackVersion}"
+    implementation "ch.qos.logback:logback-classic:${logbackVersion}"
     implementation 'com.google.code.gson:gson:2.10.1'
     implementation 'com.mysql:mysql-connector-j:8.2.0'
     implementation 'com.zaxxer:HikariCP:5.0.1'

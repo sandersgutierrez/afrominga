@@ -30,7 +30,7 @@ public class JettyServerFactory {
 
         ServletContextHandler apiContext = new ServletContextHandler();
         apiContext.addServlet(TaskController.class, "/tasks/*");
-        apiContext.addServlet(AfroController.class, "/afros/*");
+        apiContext.addServlet(AfroController.class, "/afros");
         server.setHandler(apiContext);
 
         server.start();
