@@ -1,40 +1,57 @@
 package io.github.untalsanders.afrominga.application.rest.controller;
 
+import com.google.gson.Gson;
+import io.github.untalsanders.afrominga.application.service.TaskServiceImpl;
+import io.github.untalsanders.afrominga.domain.service.TaskService;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(name = "TaskController", urlPatterns = "/tasks/*")
 public class TaskController extends HttpServlet {
-
+    private static final Logger LOGGER = LoggerFactory.getLogger(TaskController.class);
+    private final TaskService taskService;
     private final List<String> tasks = new ArrayList<>();
 
+    public TaskController() {
+        this.taskService = new TaskServiceImpl();
+    }
+
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String pathInfo = req.getPathInfo();
-        if (pathInfo == null || pathInfo.equals("/")) {
-            resp.getWriter().write(tasks.toString());
+    protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        String pathInfo = req.getServletPath();
+
+        if (pathInfo == null || pathInfo.equals("/tasks")) {
+            LOGGER.info("PATH: {}", pathInfo);
+            var jsonResponse = new Gson().toJson(taskService.getAll());
+
+            res.setContentType("application/json");
+            res.setCharacterEncoding("UTF-8");
+            res.setStatus(HttpServletResponse.SC_OK);
+            res.getWriter().write(jsonResponse);
         } else {
             String taskId = pathInfo.substring(1); // Remove leading slash
+            LOGGER.info("PATH: {}", pathInfo);
             int id;
             try {
                 id = Integer.parseInt(taskId);
             } catch (NumberFormatException e) {
-                resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-                resp.getWriter().write("Invalid task ID");
+                res.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+                res.getWriter().write("Invalid task ID");
                 return;
             }
             if (id < 0 || id >= tasks.size()) {
-                resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
-                resp.getWriter().write("Task not found");
+                res.setStatus(HttpServletResponse.SC_NOT_FOUND);
+                res.getWriter().write("Task not found");
                 return;
             }
-            resp.getWriter().write(tasks.get(id));
+            res.getWriter().write(tasks.get(id));
         }
     }
 

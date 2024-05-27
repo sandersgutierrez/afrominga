@@ -1,36 +1,41 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'org.owasp:dependency-check-gradle:9.2.0'
+    }
+}
+
 plugins {
     id 'application'
     id 'war'
 }
+
+apply plugin: 'org.owasp.dependencycheck'
 
 repositories {
     mavenCentral()
 }
 
 ext {
+    gsonVersion = "2.10.1"
     jettyVersion = "11.0.20"
     logbackVersion = "1.4.14"
+    hikariCPVersion = "5.0.1"
+    mysqlConnectorVersion = "8.2.0"
+    slf4jApiVersion = "2.0.9"
 }
 
 dependencies {
-    providedCompile 'jakarta.el:jakarta.el-api:5.0.1'
-    providedCompile 'jakarta.servlet:jakarta.servlet-api:6.0.0'
-    providedCompile 'jakarta.servlet.jsp:jakarta.servlet.jsp-api:3.1.1'
-    providedCompile 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:3.0.0'
-
-    implementation "org.eclipse.jetty:apache-jsp:${jettyVersion}"
     implementation "org.eclipse.jetty:jetty-annotations:${jettyVersion}"
     implementation "org.eclipse.jetty:jetty-server:${jettyVersion}"
-    implementation "org.eclipse.jetty:jetty-webapp:${jettyVersion}"
 
     implementation "ch.qos.logback:logback-core:${logbackVersion}"
     implementation "ch.qos.logback:logback-classic:${logbackVersion}"
-    implementation 'com.google.code.gson:gson:2.10.1'
-    implementation 'com.mysql:mysql-connector-j:8.2.0'
-    implementation 'com.zaxxer:HikariCP:5.0.1'
-    implementation 'org.slf4j:slf4j-api:2.0.9'
-
-    runtimeOnly 'com.h2database:h2:2.2.220'
+    implementation "com.google.code.gson:gson:${gsonVersion}"
+    implementation "com.mysql:mysql-connector-j:${mysqlConnectorVersion}"
+    implementation "com.zaxxer:HikariCP:${hikariCPVersion}"
 }
 
 group = 'io.github.untalsanders.afrominga'
@@ -41,5 +46,5 @@ jar {
 }
 
 application {
-    mainClass = 'io.github.untalsanders.afrominga.Main'
+    mainClass = 'io.github.untalsanders.afrominga.AfromingaApplication'
 }
