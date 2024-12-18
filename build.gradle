@@ -8,6 +8,7 @@ buildscript {
 }
 
 plugins {
+    id 'java'
     id 'application'
     id 'war'
 }
@@ -30,7 +31,6 @@ ext {
 dependencies {
     implementation "org.eclipse.jetty:jetty-annotations:${jettyVersion}"
     implementation "org.eclipse.jetty:jetty-server:${jettyVersion}"
-
     implementation "ch.qos.logback:logback-core:${logbackVersion}"
     implementation "ch.qos.logback:logback-classic:${logbackVersion}"
     implementation "com.google.code.gson:gson:${gsonVersion}"
