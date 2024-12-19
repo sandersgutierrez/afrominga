@@ -1,6 +1,6 @@
 package io.github.untalsanders.afrominga;
 
-import io.github.untalsanders.afrominga.infrastructure.server.JettyServerFactory;
+import io.github.untalsanders.afrominga.infrastructure.web.server.JettyServerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -9,7 +9,7 @@ public class AfromingaApplication {
 
     public static void main(String[] args) throws Exception {
         LOGGER.info("Profile active: {}", System.getenv("profile"));
-        JettyServerFactory.start(args);
         LOGGER.info("Started application...!!!");
+        JettyServerFactory.start(args);
     }
 }

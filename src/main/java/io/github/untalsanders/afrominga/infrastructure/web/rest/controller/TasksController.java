@@ -1,8 +1,8 @@
-package io.github.untalsanders.afrominga.application.rest.controller;
+package io.github.untalsanders.afrominga.infrastructure.web.rest.controller;
 
 import com.google.gson.Gson;
-import io.github.untalsanders.afrominga.application.service.TaskServiceImpl;
-import io.github.untalsanders.afrominga.domain.service.TaskService;
+import io.github.untalsanders.afrominga.application.service.TasksService;
+import io.github.untalsanders.afrominga.domain.usecase.RetrieveTaskUseCase;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -14,13 +14,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TaskController extends HttpServlet {
-    private static final Logger LOGGER = LoggerFactory.getLogger(TaskController.class);
-    private final TaskService taskService;
+public class TasksController extends HttpServlet {
+    private static final Logger LOGGER = LoggerFactory.getLogger(TasksController.class);
+    private final RetrieveTaskUseCase retrieveTaskUseCase;
     private final List<String> tasks = new ArrayList<>();
 
-    public TaskController() {
-        this.taskService = new TaskServiceImpl();
+    public TasksController() {
+        this.retrieveTaskUseCase = new TasksService();
     }
 
     @Override
@@ -29,7 +29,7 @@ public class TaskController extends HttpServlet {
 
         if (pathInfo == null || pathInfo.equals("/tasks")) {
             LOGGER.info("PATH: {}", pathInfo);
-            var jsonResponse = new Gson().toJson(taskService.getAll());
+            var jsonResponse = new Gson().toJson(retrieveTaskUseCase.getAll());
 
             res.setContentType("application/json");
             res.setCharacterEncoding("UTF-8");

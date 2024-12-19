@@ -1,12 +1,12 @@
 package io.github.untalsanders.afrominga.application.service;
 
-import io.github.untalsanders.afrominga.domain.Task;
-import io.github.untalsanders.afrominga.domain.service.TaskService;
+import io.github.untalsanders.afrominga.domain.model.Task;
+import io.github.untalsanders.afrominga.domain.usecase.RetrieveTaskUseCase;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class TaskServiceImpl implements TaskService {
+public class TasksService implements RetrieveTaskUseCase {
 
     @Override
     public List<Task> getAll() {

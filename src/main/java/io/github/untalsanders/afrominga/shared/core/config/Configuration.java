@@ -1,7 +1,8 @@
-package io.github.untalsanders.afrominga.infrastructure.config;
+package io.github.untalsanders.afrominga.shared.core.config;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Objects;
 import java.util.Properties;
 import java.util.regex.Pattern;
@@ -19,7 +20,7 @@ public final class Configuration {
             ? String.format("src/main/resources/application-%s.properties", profile)
             : "src/main/resources/application.properties";
 
-        try (FileInputStream in = new FileInputStream(filePropertyToLoad)) {
+        try (InputStream in = new FileInputStream(filePropertyToLoad)) {
             Properties properties = new Properties();
             properties.load(in);
             return properties;
@@ -28,7 +29,7 @@ public final class Configuration {
 
     private static String resolveEnvVars(String input) {
         if (null == input) throw new IllegalArgumentException();
-        var p = Pattern.compile("\\$\\{(\\w+)\\}|\\$(\\w+)");
+        var p = Pattern.compile("\\$\\{(\\w+)}|\\$(\\w+)");
         var m = p.matcher(input);
 
         var sb = new StringBuilder();

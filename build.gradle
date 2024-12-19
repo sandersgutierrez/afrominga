@@ -20,12 +20,9 @@ repositories {
 }
 
 ext {
-    gsonVersion = "2.10.1"
     jettyVersion = "11.0.20"
     logbackVersion = "1.4.14"
-    hikariCPVersion = "5.0.1"
-    mysqlConnectorVersion = "8.2.0"
-    slf4jApiVersion = "2.0.9"
+    jstlVersion = "2.0.0"
 }
 
 dependencies {
@@ -33,9 +30,9 @@ dependencies {
     implementation "org.eclipse.jetty:jetty-server:${jettyVersion}"
     implementation "ch.qos.logback:logback-core:${logbackVersion}"
     implementation "ch.qos.logback:logback-classic:${logbackVersion}"
-    implementation "com.google.code.gson:gson:${gsonVersion}"
-    implementation "com.mysql:mysql-connector-j:${mysqlConnectorVersion}"
-    implementation "com.zaxxer:HikariCP:${hikariCPVersion}"
+    implementation "com.google.code.gson:gson:2.10.1"
+    implementation 'com.mysql:mysql-connector-j:8.3.0'
+    implementation "com.zaxxer:HikariCP:5.0.1"
 }
 
 group = 'io.github.untalsanders.afrominga'

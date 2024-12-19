@@ -2,18 +2,20 @@ package io.github.untalsanders.afrominga.infrastructure.persistence;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
-import io.github.untalsanders.afrominga.infrastructure.config.Configuration;
+import io.github.untalsanders.afrominga.shared.core.config.Configuration;
 
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 
 public final class Database {
+    private Database() {}
+
     public static Connection getConnection() throws SQLException {
         return DataSource.getConnection();
     }
 
-    private final static class DataSource {
+    private static final class DataSource {
         private static final HikariConfig config = new HikariConfig();
         private static final HikariDataSource ds;
         private static final String TEMPLATE_URL = "jdbc:%s://%s:%s/%s";

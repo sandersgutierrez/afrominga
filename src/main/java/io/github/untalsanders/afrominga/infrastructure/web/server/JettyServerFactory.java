@@ -1,8 +1,8 @@
-package io.github.untalsanders.afrominga.infrastructure.server;
+package io.github.untalsanders.afrominga.infrastructure.web.server;
 
-import io.github.untalsanders.afrominga.application.rest.controller.AfroController;
-import io.github.untalsanders.afrominga.application.rest.controller.TaskController;
-import io.github.untalsanders.afrominga.infrastructure.config.Configuration;
+import io.github.untalsanders.afrominga.infrastructure.web.rest.controller.AfrosController;
+import io.github.untalsanders.afrominga.infrastructure.web.rest.controller.TasksController;
+import io.github.untalsanders.afrominga.shared.core.config.Configuration;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
 import org.eclipse.jetty.servlet.ServletContextHandler;
@@ -21,10 +21,11 @@ public class JettyServerFactory {
             server.addConnector(connector);
         }
 
-        ServletContextHandler apiContext = new ServletContextHandler();
-        apiContext.addServlet(TaskController.class, "/tasks");
-        apiContext.addServlet(AfroController.class, "/afros");
-        server.setHandler(apiContext);
+        ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
+        context.setContextPath("/api");
+        context.addServlet(TasksController.class, "/tasks");
+        context.addServlet(AfrosController.class, "/afros");
+        server.setHandler(context);
 
         server.start();
         server.join();

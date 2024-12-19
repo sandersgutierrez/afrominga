@@ -1,8 +1,7 @@
 package io.github.untalsanders.afrominga.application.service;
 
-import io.github.untalsanders.afrominga.application.rest.controller.AfroController;
-import io.github.untalsanders.afrominga.domain.Afro;
-import io.github.untalsanders.afrominga.domain.service.AfroService;
+import io.github.untalsanders.afrominga.domain.model.Afro;
+import io.github.untalsanders.afrominga.domain.usecase.RetrieveAfroUseCase;
 import io.github.untalsanders.afrominga.infrastructure.persistence.Database;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,10 +10,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AfroServiceImpl implements AfroService {
-    private static final Logger LOGGER = LoggerFactory.getLogger(AfroController.class);
+public class AfrosService implements RetrieveAfroUseCase {
+    private static final Logger LOGGER = LoggerFactory.getLogger(AfrosService.class);
 
-    public List<Afro> getAll() {
+    public List<Afro> getAllAfros() {
         List<Afro> afroList = new ArrayList<>();
 
         try (

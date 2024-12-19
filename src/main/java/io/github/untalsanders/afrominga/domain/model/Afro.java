@@ -1,4 +1,4 @@
-package io.github.untalsanders.afrominga.domain;
+package io.github.untalsanders.afrominga.domain.model;
 
 public class Afro {
     private String id;
