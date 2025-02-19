@@ -20,18 +20,19 @@ repositories {
 }
 
 ext {
-    jettyVersion = "11.0.20"
+    jettyVersion = "12.0.16"
     logbackVersion = "1.4.14"
     jstlVersion = "2.0.0"
 }
 
 dependencies {
-    implementation "org.eclipse.jetty:jetty-annotations:${jettyVersion}"
+    implementation "jakarta.servlet:jakarta.servlet-api:6.1.0"
     implementation "org.eclipse.jetty:jetty-server:${jettyVersion}"
+    implementation "org.eclipse.jetty:jetty-servlet:11.0.24"
     implementation "ch.qos.logback:logback-core:${logbackVersion}"
     implementation "ch.qos.logback:logback-classic:${logbackVersion}"
     implementation "com.google.code.gson:gson:2.10.1"
-    implementation 'com.mysql:mysql-connector-j:8.0.27'
+    implementation 'com.mysql:mysql-connector-j:9.2.0'
     implementation "com.zaxxer:HikariCP:5.0.1"
 }
 

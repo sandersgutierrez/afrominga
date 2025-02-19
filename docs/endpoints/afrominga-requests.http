@@ -1,0 +1,2 @@
+### GET all afros
+GET {{BASE_URL}}/api/afros

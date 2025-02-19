@@ -1,7 +1,7 @@
 <jsp:include page="/templates/header.jsp" />
 
 <div class="container">
-    <h3>About</h3>
+    <h2>About</h2>
 </div>
 
 <jsp:include page="/templates/footer.jsp" />

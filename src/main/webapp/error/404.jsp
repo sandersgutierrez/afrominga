@@ -1,4 +1,3 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +8,7 @@
           integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
           crossorigin="anonymous"
           referrerpolicy="no-referrer"/>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
     <title>Afrominga</title>
 </head>
 <body>
@@ -17,7 +16,7 @@
     <h1>Error 404 - Recurso no disponible</h1>
 </main>
 
-<script src="${pageContext.request.contextPath}/assets/js/main.js"></script>
+<script src="assets/js/main.js"></script>
 
 </body>
 </html>

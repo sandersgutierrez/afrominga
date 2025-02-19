@@ -65,7 +65,7 @@
     font-style: italic;
     font-weight: 400;
     font-display: block;
-    src: url('${pageContext.request.contextPath}../fonts/WorkSans/WorkSans-Italic.ttf') format('truetype');
+    src: url('../fonts/WorkSans/WorkSans-Italic.ttf') format('truetype');
 }
 
 @font-face {
